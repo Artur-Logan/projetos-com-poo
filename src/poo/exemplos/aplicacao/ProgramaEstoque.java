@@ -10,21 +10,21 @@ public class ProgramaEstoque {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        ProdutoDoEstoque produtoDoEstoque = new ProdutoDoEstoque();
-
         System.out.println("Entre com os dados do produto: ");
         System.out.print("Nome: ");
-        produtoDoEstoque.nome = sc.nextLine();
+        String nome = sc.nextLine();
         System.out.print("Preço: ");
-        produtoDoEstoque.preço = sc.nextDouble();
-        System.out.print("Quantidade: ");
-        produtoDoEstoque.quantidade = sc.nextInt();
+        double preço = sc.nextDouble();
 
-        produtoDoEstoque.toString();
+        ProdutoDoEstoque produtoDoEstoque = new ProdutoDoEstoque(nome, preço);
+
+        produtoDoEstoque.setNome("Computer");
+        System.out.println("Nome atualizado: " + produtoDoEstoque.getNome());
+        produtoDoEstoque.setPreço(1200.00);
+        System.out.println("Preço atualizado: " + produtoDoEstoque.getPreço());
 
         System.out.println();
         System.out.println("Informações do produto " + produtoDoEstoque);
-
         System.out.println();
         System.out.println("Entre com o numero de produtos a serem adicionadps: ");
         int quantidade = sc.nextInt();
@@ -38,8 +38,6 @@ public class ProgramaEstoque {
 
         System.out.println("Informações do produto " + produtoDoEstoque);
         System.out.println();
-
-
 
         sc.close();
     }

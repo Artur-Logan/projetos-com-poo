@@ -2,9 +2,42 @@ package poo.exemplos.entities;
 
 public class ProdutoDoEstoque {
 
-    public String nome;
-    public double preço;
-    public int quantidade;
+    String nome;
+    private double preço;
+    private int quantidade;
+
+    public ProdutoDoEstoque(String nome, double preço, int quantidade){
+        this.nome = nome;
+        this.preço = preço;
+        this.quantidade = quantidade;
+    }
+
+    public ProdutoDoEstoque(String nome, double preço){
+        this.nome = nome;
+        this.preço = preço;
+    }
+
+    //pq sobrecarga é necessario
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public String getNome(){
+        return nome;
+    }
+
+    public void setPreço(double preço){
+        this.preço = preço;
+    }
+
+    public double getPreço(){
+        return preço;
+    }
+
+    public int getQuantidade(){
+        return quantidade;
+    }
 
     public double valorTotalEmEstoque(){
         return preço * quantidade;
